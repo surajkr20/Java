@@ -19,3 +19,23 @@ inside the jdk >> jre >> jvm
 -->
 
 <!-- java is object orientend programming language, oop means everything should be an object, and to create an object we need to class -->
+
+<!-- Data types in java
+
+1.  integer data types, below type and total consuming memory
+    1. int - 4 bytes
+    2. long - 8 bytes
+    3. short - 2 bytes
+    4. byte - 1 bytes
+
+2. float data types --
+    float - 4 bytes
+    double - 8 bytes
+
+3. character data types store 2 bytes of memory - java followed unicode not asciicode
+    characters contain in single quote(ex- 'a', 'K', '1', '@' etc)
+    char - 2 bytes
+
+4. boolean data types - only true & false not consider 0 & 1 in java
+
+ -->
