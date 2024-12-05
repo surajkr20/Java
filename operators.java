@@ -5,7 +5,7 @@ public class operators {
         int y = 6;
 
         // conditions
-        if(x>y){
+        if(x>y){ 
             System.out.println("hello");
         }else{
             System.out.println("byy byy");
