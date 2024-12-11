@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.Scanner;
 
-public class demo {
+public class arraysyntax {
     public static void main(String[] args){
         int num1[] = new int[5];
 
