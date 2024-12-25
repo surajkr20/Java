@@ -1,6 +1,6 @@
 package BSInterviewPrep;
 
-// The "ceiling number" concept in binary search refers to finding the smallest number in a sorted array that is greater than or equal to a given target. If the target exists in the array, the ceiling is the target itself
+// Ques. The "ceiling number" concept in binary search refers to finding the smallest number in a sorted array that is greater than or equal to a given target. If the target exists in the array, the ceiling is the target itself
 
 public class ceilingNo {
     public static void main(String[] args) {
