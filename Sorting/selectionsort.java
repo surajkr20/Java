@@ -11,12 +11,12 @@ public class selectionsort {
 
     static void selectionSort(int arr[]){
         for(int i=0; i<arr.length - 1; i++){
-            int smIndex = i; // it is the first element of unsorted part of arr
+            int smIndex = i; // it is the first index of unsorted part of arr
             
             // finding smallest element
             for(int j=i+1; j<arr.length; j++){
                 if(arr[j]<arr[smIndex]){
-                    smIndex = j;
+                    smIndex = j; // udate smIndex index with j
                 }
             }
 

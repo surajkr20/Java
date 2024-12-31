@@ -9,9 +9,9 @@ public class bubblesort {
     }
 
     static void sortWithBubble(int arr[]){
-        for(int i=0; i<arr.length; i++){
-            boolean isSwaped = false;
-            for(int j=0; j<arr.length-i-1; j++){
+        boolean isSwaped = false; // for checking element already sorted or not
+        for(int i=0; i<arr.length; i++){ // total no of iterations
+            for(int j=0; j<arr.length-i-1; j++){ 
                 if(arr[j]>arr[j+1]){
                     // swapping
                     int temp = arr[j];
