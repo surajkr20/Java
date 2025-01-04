@@ -3,6 +3,9 @@ package SotingQues;
 import java.util.ArrayList;
 import java.util.List;
 
+// asked by Google (cycle sort)
+// leetcode Ques.448 => Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
+
 public class allmisingNo {
     public static void main(String[] args) {
         int arr[] = {9, 6, 4, 2, 3, 7, 0, 1};
