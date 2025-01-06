@@ -12,12 +12,6 @@ public class practise {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-
-        insertionSort(arr);
-        System.out.println();
-        for(int i=0; i<arr.length; i++){
-            System.out.print(arr[i]+" ");
-        }
     }
 
     // bubble sort algorithms
@@ -30,9 +24,7 @@ public class practise {
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-
-                    isSorted = true;
-                }
+                }else isSorted = true;
             }
             if(!isSorted) break;
         }
@@ -53,7 +45,4 @@ public class practise {
         }
     }
 
-    static void insertionSort(int arr[]){
-        
-    }
 }
