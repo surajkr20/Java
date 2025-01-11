@@ -2,7 +2,7 @@ package Strings;
 
 public class palindrome {
     public static void main(String[] args) {
-        String value = "abcdcba";
+        // String value = "abcdcba";
         String name = "suraj";
         System.out.println(isPalindrome(name));
     }
