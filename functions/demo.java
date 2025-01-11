@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class demo {
     public static void main(String[] args) {
         // user input
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter first value : ");
