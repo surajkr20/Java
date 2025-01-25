@@ -3,7 +3,7 @@ package BitManipulations;
 public class ithbit {
     public static void main(String[] args) {
         int n = 1010110; // This is treated as a decimal number, not binary.
-        int bit = 4;
+        int bit = 3;
 
         int ans = findbit(n, bit);
         System.out.println(ans);
