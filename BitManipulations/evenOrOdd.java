@@ -5,7 +5,9 @@ package BitManipulations;
 public class evenOrOdd {
     public static void main(String[] args) {
         boolean ans = find(5);
-        System.out.println(ans);
+        
+        if(ans==true) System.out.println("odd number");
+        else System.out.println("even no");
     }
 
     static boolean find(int n) {
