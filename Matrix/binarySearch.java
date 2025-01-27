@@ -42,6 +42,7 @@ public class binarySearch {
         return null; // Target not found
     }
 
+    // this is index mapping techniques - all 2d arrays treated a single array
     static boolean found1(int matrix[][], int target){
         int n = matrix.length;
         int m = matrix[0].length;
