@@ -5,12 +5,12 @@ package Maths;
 public class primeNo2 {
     public static void main(String[] args) {
         int n = 20;
-        boolean[] primes = new boolean[n+1];
-        Sieve(n, primes);
+        Sieve(n);
     }
 
-    static void Sieve(int n, boolean[] primes){
-       
+    static void Sieve(int n){
+        boolean[] primes = new boolean[n+1];
+        
         for(int i=2; i*i<=n; i++){
             if(!primes[i]){
                 for(int j=i*2; j<=n; j+=i){
