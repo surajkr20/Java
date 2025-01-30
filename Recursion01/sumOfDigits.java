@@ -6,6 +6,7 @@ public class sumOfDigits {
         SOD(n);
 
         System.out.println(SOD01(n));
+        System.out.println(pod(n));
     }
 
     static void SOD(int n) {
@@ -21,5 +22,10 @@ public class sumOfDigits {
     static int SOD01(int n) {
         if(n==0) return 0;
         return n % 10 + SOD01(n / 10);
+    }
+
+    static int pod(int n){
+        if(n%10 == n) return n;
+        return n % 10 * pod(n/10);
     }
 }
