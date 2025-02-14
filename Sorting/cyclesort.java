@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+// use cycle sort when the range given 1 to n.
+
 public class cyclesort {
     public static void main(String[] args) {
         int[] arr = {4,3,1,2, 5};
@@ -17,6 +19,7 @@ public class cyclesort {
             if(arr[idx]==arr[correct]) idx++;
             else swap(arr, idx, correct); 
         }
+        
     }
 
     static void swap(int arr[], int first, int second){
