@@ -10,25 +10,25 @@ public class missingNo {
         System.out.println(result);
     }
 
-    static int MissingNo(int nums[]){
+    static int MissingNo(int arr[]){
         int i = 0;
-        while(i<nums.length){
-            int correct = nums[i];
-            if(nums[i]<nums.length && nums[i]!=nums[correct]){
-                int temp = nums[i];
-                nums[i] = nums[correct];
-                nums[correct] = temp;            
+        while(i<arr.length){
+            int correct = arr[i];
+            if(arr[i]<arr.length && arr[i]!=arr[correct]){
+                int temp = arr[i];
+                arr[i] = arr[correct];
+                arr[correct] = temp;            
             }else i++;
         }
 
         // search for first missing no
-        for(int index=0; index<nums.length; index++){
-            if (nums[index] != index) {
+        for(int index=0; index<arr.length; index++){
+            if (arr[index] != index) {
                 return index;
             }
         }
 
         // case-ii
-        return nums.length;
+        return arr.length;
     }
 }
