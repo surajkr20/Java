@@ -1,7 +1,7 @@
 package Strings;
 
 public class ReverseString {
-    
+
     public static void main(String[] args) {
         String str = "HelloWorld";
         // System.out.println(reverseString(str)); // Output: "dlrowolleh"
@@ -11,24 +11,27 @@ public class ReverseString {
         System.out.println(twoPointers(str));
 
     }
-        // using string builder
+
+    // using string builder
     static String reverseString(String str) {
         String str1 = str.toLowerCase();
         StringBuilder reverse = new StringBuilder(str1);
         return reverse.reverse().toString();
     }
-        // using loops with string builder
-    static String usingLoops(String str){
+
+    // using loops with string builder
+    static String usingLoops(String str) {
         String str1 = str.toLowerCase();
         StringBuilder reversed = new StringBuilder();
-        for(int i=str1.length()-1; i>=0; i--){
+        for (int i = str1.length() - 1; i >= 0; i--) {
             reversed.append(str1.charAt(i));
         }
 
         return reversed.toString();
     }
-        // two pointers approach
-    static String twoPointers(String str){
+
+    // two pointers approach
+    static String twoPointers(String str) {
         char[] charArray = str.toCharArray();
         int left = 0, right = charArray.length - 1;
 
