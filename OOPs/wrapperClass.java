@@ -5,14 +5,16 @@ package oops;
 
 public class wrapperClass {
     public static void main(String[] args) {
-        Integer a = 20;
-        System.out.println(a);
+        // Integer a = 20;
+        // System.out.println(a);
 
-        final int b = 34;
-        b = 35; // error
+        // final int b = 34;
+        // b = 35; // error
 
-        System.out.println(b);
-        
+        // System.out.println(b);
+
+        A obj = new A("abhinav");
+        System.out.println(obj);
     }
 }
 
