@@ -1,4 +1,4 @@
-package OOPS02;
+package OOPS02.Inheritance;
 
 public class SingleIheritance {
     public static void main(String[] args) {

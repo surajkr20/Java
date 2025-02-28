@@ -1,12 +1,15 @@
-package OOPS02;
+package OOPS02.Inheritance;
 
-public class MultileveInheritance {
+public class Hierarchical {
     public static void main(String[] args) {
-        Child obj = new Child();
-
+        Parent obj = new Parent();
         obj.fun();
         obj.fun02();
-        obj.fun03();
+
+        Child obj01 = new Child();
+        obj01.fun();
+        obj01.fun03();
+        
     }
 }
 
@@ -22,7 +25,7 @@ class Parent extends GrandFather{
     }
 }
 
-class Child extends Parent{
+class Child extends GrandFather{
     void fun03(){
         System.out.println("from child...");
     }
