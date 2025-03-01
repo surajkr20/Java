@@ -14,6 +14,7 @@ public class Implementation {
         Node head = null;
         Node tail = null;
 
+        int size = 0;
         // Insert At end
         void insertAtEnd(int val){
             Node temp = new Node(val);
@@ -23,6 +24,8 @@ public class Implementation {
                 tail.next = temp;
             }
             tail = temp;
+
+            size++;
         }
 
         // display the all nodes
@@ -36,14 +39,14 @@ public class Implementation {
         }
 
         // length of nodes
-        void length(){
+        int length(){
             Node temp = head;
             int count = 0;
             while( temp != null ){
                 count++;
                 temp = temp.next;
             }
-            System.out.println("total length of nodes : " + count);
+            return count;
         }
 
         // Insert At beggining
@@ -56,6 +59,57 @@ public class Implementation {
                 temp.next = head;
                 head = temp;
             }
+
+            size++;
+        }
+
+        // insert at given index 
+        void insertAt(int idx, int val){
+            Node t = new Node(val);
+            Node temp = head;
+
+            if(idx == size){
+                insertAtEnd(val);
+                return;
+            }else if(idx == 0){
+                insertAtHead(val);
+                return;
+            }else if(idx < 0 || idx > size){
+                System.out.println("wrong index");
+                return;
+            }
+
+            for(int i=1; i<=idx-1; i++){
+                temp = temp.next;
+            }
+
+            t.next = temp.next;
+            temp.next = t;
+
+            size++;
+        }
+
+        // get element
+        int getElement(int idx){
+            Node temp = head;
+            if(idx < 0 || idx > size){
+                System.out.println("wrong index");
+                return -1;
+            }
+            for(int i=1; i<=idx; i++){
+                temp = temp.next;
+            }
+            return temp.data;
+        }
+
+        // deleteAtIndex
+        void deleteAtIndex(int idx){
+            Node temp = head;
+            for(int i=1; i<idx; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
         }
     }
 
@@ -64,14 +118,18 @@ public class Implementation {
 
         ll.insertAtEnd(12);
         ll.insertAtEnd(14);
-        // ll.insertAtEnd(15);
-
-        ll.display();
-        // ll.length();
 
         ll.insertAtHead(23);
         ll.insertAtHead(28);
 
         ll.display();
+
+        ll.insertAt(1, 35);
+        ll.display();
+
+        System.out.println(ll.getElement(3));
+
+        // ll.deleteAtIndex(3);
+        // ll.display();
     }
 }
