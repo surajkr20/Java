@@ -11,6 +11,17 @@ public class findMiddleElement {
         }
     }
 
+    // optimal aproach in one pass (o(n) t.c)
+    public static Node middleNode(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     public static void middleEle(Node head) {
         if (head == null) {
             System.out.println("List is empty.");
@@ -58,6 +69,8 @@ public class findMiddleElement {
         // d.next = e;
 
         middleEle(a);
+        Node ans = middleNode(a);
+        System.out.println(ans.data);
     }
 
 }
