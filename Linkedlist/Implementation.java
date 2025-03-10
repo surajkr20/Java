@@ -111,25 +111,46 @@ public class Implementation {
             temp.next = temp.next.next;
             size--;
         }
+
+        // remove duplecates 
+        void deleteDuplicates() {
+            Node temp = head;
+            while(temp.next != null){
+                if(temp.data == temp.next.data){
+                    temp.next = temp.next.next;
+                    size--;
+                }else{
+                    temp = temp.next;
+                }
+            }
+            tail = temp;
+            tail.next = null;
+        }
     }
 
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();
 
-        ll.insertAtEnd(12);
-        ll.insertAtEnd(14);
+        // ll.insertAtHead(10);
+        // ll.insertAtHead(12);
+        // ll.insertAtHead(28);
+        ll.insertAtEnd(30);
+        ll.insertAtEnd(35);
+        ll.insertAtEnd(35);
+        ll.insertAtEnd(35);
 
-        ll.insertAtHead(23);
-        ll.insertAtHead(28);
+        // ll.display();
 
-        ll.display();
+        // ll.insertAt(1, 35);
+        // ll.display();
 
-        ll.insertAt(1, 35);
-        ll.display();
-
-        System.out.println(ll.getElement(3));
+        // System.out.println(ll.getElement(3));
 
         // ll.deleteAtIndex(3);
         // ll.display();
+
+        ll.display();
+        ll.deleteDuplicates();
+        ll.display();
     }
 }
