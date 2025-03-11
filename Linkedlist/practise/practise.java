@@ -1,4 +1,4 @@
-package Linkedlist;
+package Linkedlist.practise;
 
 public class practise {
     public static class Node{
