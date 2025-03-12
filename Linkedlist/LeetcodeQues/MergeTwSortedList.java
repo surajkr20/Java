@@ -15,7 +15,7 @@ public class MergeTwSortedList {
     }
 
     // not optimal approach
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode temp1 = list1;
         ListNode temp2 = list2;
         ListNode head = new ListNode(100);
@@ -39,6 +39,31 @@ public class MergeTwSortedList {
         } else {
             temp.next = temp1;
         }
+
+        return head.next;
+    }
+
+    // optimal approach(using one pass)
+    public static ListNode mergeTwoLL(ListNode list1, ListNode list2){
+        ListNode head1 = list1;
+        ListNode head2 = list2;
+        ListNode head = new ListNode(100);
+        ListNode temp = head;
+
+        while( head1 != null && head2 != null ){
+            if(head1.val <= head2.val){
+                temp.next = head1;
+                temp = head1;
+                head1 = head1.next;
+            }else{
+                temp.next = head2;
+                temp = head2;
+                head2 = head2.next;
+            }
+        }
+
+        if(head1 == null) temp.next = head2;
+        else temp.next = head1;
 
         return head.next;
     }
