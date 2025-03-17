@@ -1,6 +1,6 @@
 package Linkedlist.LeetcodeQues;
 
-// Ques.206 || Palindrome Linked List
+// Ques.234 || Palindrome Linked List
 
 public class palindromeLL {
     public static class ListNode {
