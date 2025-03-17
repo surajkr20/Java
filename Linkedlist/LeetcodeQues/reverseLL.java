@@ -12,11 +12,26 @@ public class reverseLL {
 
     // this is recursive approach
     public static ListNode reverse(ListNode head){
-        if(head.next == null) return head;
+        if(head == null || head.next == null) return head;
         ListNode newHead = reverse(head.next);
         head.next.next = head;
         head.next = null;
         return newHead;
+    }
+
+    // iterative approach
+    public static ListNode reverse01(ListNode head){
+        ListNode curr = head;
+        ListNode prev = null;
+        ListNode after = null;
+
+        while(curr != null){
+            after = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = after;
+        }
+        return prev;
     }
 
     public static void display(ListNode head){
@@ -42,7 +57,7 @@ public class reverseLL {
         e.next = f;
 
         display(a);
-        ListNode ans = reverse(a);
+        ListNode ans = reverse01(a);
         display(ans);
     }
 
