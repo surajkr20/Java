@@ -7,6 +7,7 @@ public class reverseStack {
     public static void pushAtBottom(Stack<Integer> st, int x){
         if(st.size() == 0){
             st.push(x);
+            return;
         }
         int top = st.pop();
         pushAtBottom(st, x);
@@ -16,6 +17,7 @@ public class reverseStack {
     public static void reverse(Stack<Integer> st){
         if(st.size() == 1) return;
         int top = st.pop();
+        System.out.print(top + " ");
         reverse(st);
         pushAtBottom(st, top);
     }
@@ -28,6 +30,6 @@ public class reverseStack {
         st.push(4);
         st.push(5);
 
-
+        reverse(st);
     }
 }
