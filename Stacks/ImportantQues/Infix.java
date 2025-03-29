@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Infix {
     public static void main(String[] args) {
-        String str = "9-5+3*4/6"; // Input infix expression
+        String str = "9-(5+3)*4/6"; // Input infix expression
         Stack<Integer> val = new Stack<>(); // Stack to store operand values
         Stack<Character> op = new Stack<>(); // Stack to store operators
 
@@ -13,9 +13,22 @@ public class Infix {
             int acsii = (int) ch;
             if (acsii >= 48 && acsii<=57) {
                 val.push(acsii - 48); // Convert character to integer and push to value stack
-            } else if (op.isEmpty()) {
+            } else if (op.isEmpty() || ch == '(' || op.peek() == '(') {
                 op.push(ch); // If operator stack is empty, push the current operator
-            } else {
+            } else if(ch == ')'){
+                while(op.peek() != '('){
+                    int v2 = val.pop();
+                    int v1 = val.pop();
+
+                    if(op.peek() == '+') val.push(v1+v2);
+                    if(op.peek() == '-') val.push(v1-v2);
+                    if(op.peek() == '*') val.push(v1*v2);
+                    if(op.peek() == '/') val.push(v1/v2);
+                    op.pop();
+                }
+                op.pop();
+            }
+            else {
                 if (ch == '+' || ch == '-') {
                     // Process previous operator before pushing current one
                     int v2 = val.pop();
