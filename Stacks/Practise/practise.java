@@ -3,26 +3,37 @@ package Stacks.Practise;
 import java.util.Stack;
 
 public class practise {
+    public static void display(Stack<Integer> st){
+        if(st.size() == 0) return;
+        int top = st.pop();
+        System.out.print(top + " ");
+        display(st);
+        st.push(top);
+    }
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
-        st.push(23);
-        st.push(24);
-        st.push(26);
 
-        Stack<Integer> st2 = new Stack<>();
+        st.push(34);
+        st.push(35);
+        st.push(37);
+        st.push(38);
+        st.push(39);
 
-        while(st.size() > 0){
-            st2.push(st.pop());
-        }
+        // display stacks using array
 
-        Stack<Integer> st3 = new Stack<>();
+        // int[] arr = new int[st.size()];
+        // int n = arr.length;
 
-        while(st2.size() > 0){
-            st3.push(st2.pop());
-        }
+        // for(int i=n-1; i>=0; i--){
+        //     arr[i] = st.pop();
+        // }
 
-        System.out.println(st);
-        System.out.println(st2);
-        System.out.println(st3);
+        // for(int i=0; i<n; i++){
+        //     System.out.print(arr[i] + " ");
+        // }
+
+        // using recursion 
+        display(st);
+        
     }
 }
