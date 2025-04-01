@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class NextGreater {
     // using nexted loop
+    @SuppressWarnings("unused")
     public static int[] find(int[] arr){
         int n = arr.length;
         int[] res = new int[n];
