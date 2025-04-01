@@ -1,6 +1,7 @@
 package Trees.BinaryTree;
 
-public class implementation {
+public class sizeMaxSumHeight {
+    // static int size = 0;
     public static class Node {
         int val;
         Node left;
@@ -11,17 +12,9 @@ public class implementation {
         }
     }
 
-    public static void display(Node root) {
-        if (root == null)
-            return;
-        System.out.print(root.val + " -> ");
-        if (root.left != null)
-            System.out.print(root.left.val + " ,");
-        if (root.right != null)
-            System.out.print(root.right.val + " ");
-        System.out.println();
-        display(root.left);
-        display(root.right);
+    public static int size(Node root){
+        if(root == null) return 0;
+        return 1 + size(root.left) + size(root.right);
     }
 
     public static void main(String[] args) {
@@ -46,10 +39,6 @@ public class implementation {
 
         root.val = 10;
 
-        // System.out.println(root.val);
-        // System.out.println(root.left.val);
-        // System.out.println(root.right.val);
-
-        display(root);
+        System.out.println(size(root));
     }
 }
