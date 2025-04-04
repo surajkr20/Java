@@ -18,6 +18,26 @@ public class implementation {
         preorder(root.right);
     }
 
+    public static int size(Node root){
+        if(root == null) return 0;
+        return 1 + size(root.left) + size(root.right);
+    }
+
+    public static int sumOfNodes(Node root){
+        if(root == null) return 0;
+        return root.val + sumOfNodes(root.left) + sumOfNodes(root.right);
+    }
+    
+    public static int maxNode(Node root){
+        if(root == null) return 0;
+
+        int a = maxNode(root.left);
+        int b = maxNode(root.right);
+        int c = root.val;
+
+        return Math.max(a, Math.max(b, c));
+    }
+
     public static void main(String[] args) {
         Node root = new Node(5);
         Node a = new Node(4);
@@ -37,8 +57,15 @@ public class implementation {
         b.right = f;
 
         // preorder traversal (root->left->right)
-        preorder(root);
+        // preorder(root);
 
-        
+        // finding size of tree
+        System.out.println(size(root));
+
+        // sum of tree nodes
+        System.out.println(sumOfNodes(root));
+
+        // max value of in tree
+        System.out.println(maxNode(root));
     }
 }
