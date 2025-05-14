@@ -1,7 +1,5 @@
 package oops;
 
-import java.util.Arrays;
-
 public class classBasics {
     public static void main(String[] args) {
         // Student suraj; // declaration
