@@ -1,6 +1,8 @@
 package Trees.BinaryTree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 // level wise printing using BFS algorithm = queue implementation
@@ -33,6 +35,34 @@ public class BFSALGO {
         System.out.println();
     }
 
+    public static List<List<Integer>> LevelOrderTravarsal(Node root){
+        List<List<Integer>> result = new ArrayList<>();
+        if(root == null) return result;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            int queueSize = queue.size();
+            List<Integer> level = new ArrayList<>();
+
+            for(int i=0; i<queueSize; i++){
+                Node node = queue.poll();
+                level.add(node.val);
+
+                if(node.left != null){
+                    queue.offer(node.left);
+                }
+                if(node.right != null){
+                    queue.offer(node.right);
+                }
+            }
+
+            result.add(level);
+        }
+
+        return result;
+    } 
+
     public static void main(String[] args) {
         
         Node root = new Node(20);
@@ -55,5 +85,8 @@ public class BFSALGO {
         b.right = f;
 
         bfsImplementation(root);
+        
+        List<List<Integer>> ans = LevelOrderTravarsal(root);
+        System.out.println(ans);
     }
 }
